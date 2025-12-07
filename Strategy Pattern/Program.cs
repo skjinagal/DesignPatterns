@@ -3,15 +3,17 @@ public class Program
 {
     static void Main(string[] args)
     {
-        Duck redheadDuck = new RedheadDuck();
+        RedheadDuck redheadDuck = new RedheadDuck();
         redheadDuck.Display();
         redheadDuck.Quack();
         redheadDuck.Swim();
+        redheadDuck.Fly();
 
-        Duck mallardDuck = new MallardDuck();
+        MallardDuck mallardDuck = new MallardDuck();
         mallardDuck.Display();
         mallardDuck.Quack();
         mallardDuck.Swim();
+
 
         // whats happens    
     }
