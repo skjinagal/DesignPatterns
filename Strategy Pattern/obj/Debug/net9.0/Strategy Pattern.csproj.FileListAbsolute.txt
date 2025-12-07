@@ -1,0 +1,14 @@
+C:\Users\z004unwj\Documents\Personal\SK Repo\Design Patterns\Strategy Pattern\obj\Debug\net9.0\Strategy Pattern.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\z004unwj\Documents\Personal\SK Repo\Design Patterns\Strategy Pattern\obj\Debug\net9.0\Strategy Pattern.AssemblyInfoInputs.cache
+C:\Users\z004unwj\Documents\Personal\SK Repo\Design Patterns\Strategy Pattern\obj\Debug\net9.0\Strategy Pattern.AssemblyInfo.cs
+C:\Users\z004unwj\Documents\Personal\SK Repo\Design Patterns\Strategy Pattern\obj\Debug\net9.0\Strategy Pattern.csproj.CoreCompileInputs.cache
+C:\Users\z004unwj\Documents\Personal\SK Repo\Design Patterns\Strategy Pattern\bin\Debug\net9.0\Strategy Pattern.exe
+C:\Users\z004unwj\Documents\Personal\SK Repo\Design Patterns\Strategy Pattern\bin\Debug\net9.0\Strategy Pattern.deps.json
+C:\Users\z004unwj\Documents\Personal\SK Repo\Design Patterns\Strategy Pattern\bin\Debug\net9.0\Strategy Pattern.runtimeconfig.json
+C:\Users\z004unwj\Documents\Personal\SK Repo\Design Patterns\Strategy Pattern\bin\Debug\net9.0\Strategy Pattern.dll
+C:\Users\z004unwj\Documents\Personal\SK Repo\Design Patterns\Strategy Pattern\bin\Debug\net9.0\Strategy Pattern.pdb
+C:\Users\z004unwj\Documents\Personal\SK Repo\Design Patterns\Strategy Pattern\obj\Debug\net9.0\Strategy Pattern.dll
+C:\Users\z004unwj\Documents\Personal\SK Repo\Design Patterns\Strategy Pattern\obj\Debug\net9.0\refint\Strategy Pattern.dll
+C:\Users\z004unwj\Documents\Personal\SK Repo\Design Patterns\Strategy Pattern\obj\Debug\net9.0\Strategy Pattern.pdb
+C:\Users\z004unwj\Documents\Personal\SK Repo\Design Patterns\Strategy Pattern\obj\Debug\net9.0\Strategy Pattern.genruntimeconfig.cache
+C:\Users\z004unwj\Documents\Personal\SK Repo\Design Patterns\Strategy Pattern\obj\Debug\net9.0\ref\Strategy Pattern.dll
