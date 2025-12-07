@@ -1,6 +1,6 @@
 using Strategy_Pattern.Interfaces;
 namespace Strategy_Pattern;
-public class Quack : IQuackBehavior
+public class Quacking : IQuackBehavior
 {
     public void Quack()
     {

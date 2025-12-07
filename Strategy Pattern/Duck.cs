@@ -1,9 +1,22 @@
+using Strategy_Pattern.Interfaces;
 namespace Strategy_Pattern;
 public abstract class Duck 
 {
-    public void Swim()
+    public IQuackBehavior quackBehavior { get; set; }
+    public IFlyBehavior flyBehavior { get; set; }
+    public ISwimBehavior swimBehavior { get; set; }
+
+    public void PerformFly()
     {
-        System.Console.WriteLine("Swimming!");
+        flyBehavior.Fly();
+    }
+    public void PerformQuack()
+    {
+        quackBehavior.Quack();
+    }
+    public void PerformSwim()
+    {
+        swimBehavior.Swim();
     }
 
     public abstract void Display();

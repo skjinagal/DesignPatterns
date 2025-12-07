@@ -1,14 +1,12 @@
 using Strategy_Pattern.Interfaces;
 namespace Strategy_Pattern;
-public class RedheadDuck : Duck, IFlyable, IQuackable
+public class RedheadDuck : Duck
 {
-    public void Fly()
+    public RedheadDuck()
     {
-        System.Console.WriteLine("Flying!");
-    }
-    public void Quack()
-    {
-        System.Console.WriteLine("Quack!");
+        flyBehavior = new FlyWithWings();
+        quackBehavior = new Squeak();
+        swimBehavior = new Swimming();
     }
     public override void Display()
     {

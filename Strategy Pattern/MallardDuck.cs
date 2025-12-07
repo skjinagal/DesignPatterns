@@ -1,10 +1,12 @@
 using Strategy_Pattern.Interfaces;
 namespace Strategy_Pattern;
-public class MallardDuck : Duck, IQuackable
+public class MallardDuck : Duck
 {
-    public void Quack()
+    public MallardDuck()
     {
-        System.Console.WriteLine("Quack!");
+        flyBehavior = new FlyWithWings();
+        quackBehavior = new Quacking();
+        swimBehavior = new Swimming();
     }
 
     public override void Display()

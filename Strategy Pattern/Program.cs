@@ -3,16 +3,23 @@ public class Program
 {
     static void Main(string[] args)
     {
-        RedheadDuck redheadDuck = new RedheadDuck();
+        Duck redheadDuck = new RedheadDuck();
         redheadDuck.Display();
-        redheadDuck.Quack();
-        redheadDuck.Swim();
-        redheadDuck.Fly();
+        redheadDuck.PerformQuack();
+        redheadDuck.PerformSwim();
+        redheadDuck.PerformFly();
 
-        MallardDuck mallardDuck = new MallardDuck();
+        Duck mallardDuck = new MallardDuck();
         mallardDuck.Display();
-        mallardDuck.Quack();
-        mallardDuck.Swim();
+        mallardDuck.PerformQuack();
+        mallardDuck.PerformSwim();
+        mallardDuck.PerformFly();
+
+        Duck rubberDuck = new RubberDuck();
+        rubberDuck.Display();
+        rubberDuck.PerformQuack();
+        rubberDuck.PerformSwim();  
+        rubberDuck.PerformFly();
 
 
         // whats happens    
