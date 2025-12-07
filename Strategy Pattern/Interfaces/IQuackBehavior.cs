@@ -1,5 +1,5 @@
 namespace Strategy_Pattern.Interfaces;
-interface IQuackable
+interface IQuackBehavior
 {
     void Quack();
 }
