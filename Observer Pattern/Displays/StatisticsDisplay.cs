@@ -1,14 +1,18 @@
 using Observer_Pattern.Interfaces;
 
 namespace Observer_Pattern.Displays;
-public class StatisticsDisplay : IDisplay
+public class StatisticsDisplay : IObserver, IDisplay
     {
-        private double maxTemp = double.MinValue;
-        private double minTemp = double.MaxValue;
-        private double tempSum = 0.0;
+        private float maxTemp = float.MinValue;
+        private float minTemp = float.MaxValue;
+        private float tempSum = 0.0F;
         private int numReadings = 0;
 
-        public void Udpate(double temperature, double humidity, double pressure) 
+        public StatisticsDisplay(ISubject weatherData)
+        {
+            weatherData.RegisterObserver(this);
+        }
+        public void Udpate(float temperature, float humidity, float pressure) 
         {
             tempSum += temperature;
             numReadings++;
@@ -28,6 +32,6 @@ public class StatisticsDisplay : IDisplay
 
         public void Display() 
         {
-            Console.WriteLine("Displaying statistics...");
+            Console.WriteLine("Displaying Statistics: Max/Min/Avg temperature = " + maxTemp + "/" + minTemp + "/" + (tempSum / numReadings) );
         }
     }

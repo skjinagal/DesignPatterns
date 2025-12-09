@@ -1,15 +1,17 @@
 using Observer_Pattern.Interfaces;
 namespace Observer_Pattern.Displays
 {
-    public class CurrentConditionsDisplay : IDisplay
+    public class CurrentConditionsDisplay : IObserver, IDisplay
     {
-        public double Temperature { get; set; }
+        private float Temperature;
+        private float Humidity;
+        private float Pressure;
 
-        public double Humidity { get; set; }
-
-        public double Pressure { get; set; }
-
-        public void Udpate(double temperature, double humidity, double pressure) 
+        public CurrentConditionsDisplay(ISubject weatherData)
+        {
+            weatherData.RegisterObserver(this);
+        }
+        public void Udpate(float temperature, float humidity, float pressure) 
         {
             Temperature = temperature;
             Humidity = humidity;
@@ -18,7 +20,8 @@ namespace Observer_Pattern.Displays
         }
         public void Display() 
         {
-            Console.WriteLine("Displaying current conditions...");
+            Console.WriteLine("Current conditions: " + Temperature + "F degrees and " + Humidity + "% humidity");
+
         }
     }
 }

@@ -1,7 +1,7 @@
 using Observer_Pattern.Displays;
 using Observer_Pattern.Interfaces;
 namespace Observer_Pattern;
-public class WeatherData
+public class WeatherData : ISubject
 {
     public float Temperature {get; set;}
 
@@ -9,26 +9,30 @@ public class WeatherData
 
     public float Pressure {get; set; }
 
-    public IDisplay CurrentConditionsDisplay;
-
-    public IDisplay StatisticsDisplay;
-
-    public IDisplay ForcastDisplay;
+    public List<IObserver> Observers = new List<IObserver>();
     public WeatherData()
     {
-        CurrentConditionsDisplay = new CurrentConditionsDisplay();
-        StatisticsDisplay = new StatisticsDisplay();   
-        ForcastDisplay = new ForcastDisplay();
+       Observers = new List<IObserver>();
     }
 
+    public void RegisterObserver(IObserver o)
+    {
+        Observers.Add(o);
+    }
+    public void RemoveObserver(IObserver o)
+    {
+        Observers.Remove(o);
+    }
+    public void NotifyObservers()
+    {
+        Observers.ForEach(o => o.Udpate(Temperature, Humidity, Pressure));
+    }
     public void SetMeasurements(float temperature, float humidity, float pressure)
     {
         Temperature = temperature;
         Humidity = humidity;
         Pressure = pressure;
         // Notify observers about the change (will implemented here)
-        CurrentConditionsDisplay.Udpate(temperature, humidity, pressure);
-        StatisticsDisplay.Udpate(temperature, humidity, pressure);  
-        ForcastDisplay.Udpate(temperature, humidity, pressure);
+        NotifyObservers();
     }
 }

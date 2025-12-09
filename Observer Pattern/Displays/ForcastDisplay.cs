@@ -1,15 +1,19 @@
 using Observer_Pattern.Interfaces;
 namespace Observer_Pattern.Displays
 {
-    public class ForcastDisplay : IDisplay
+    public class ForcastDisplay : IObserver, IDisplay
     {
-        public double Temperature { get; set; }
+        private float Temperature;
 
-        public double Humidity { get; set; }
+        public float Humidity;
 
-        public double Pressure { get; set; }
+        public float Pressure;
 
-        public void Udpate(double temperature, double humidity, double pressure)
+        public ForcastDisplay(ISubject weatherData)
+        {
+            weatherData.RegisterObserver(this);
+        }
+        public void Udpate(float temperature, float humidity, float pressure)
         {
             Temperature = temperature;
             Humidity = humidity;
@@ -18,7 +22,7 @@ namespace Observer_Pattern.Displays
         }
         public void Display()
         {
-            Console.WriteLine("Displaying forecast conditions...");
+            Console.WriteLine("Forcast conditions: " + Temperature + "F degrees and " + Humidity + "% humidity");
         }
     }
 }

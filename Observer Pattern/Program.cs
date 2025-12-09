@@ -1,7 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Observer_Pattern;
+using Observer_Pattern.Displays;
 Console.WriteLine("Hello, Sun Shine!");
-
+WeatherData weatherData = new WeatherData();
+CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(weatherData);
+StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
+ForcastDisplay forcastDisplay = new ForcastDisplay(weatherData);
 while(true)
 {
     Console.WriteLine("Weather Station");
@@ -21,7 +25,7 @@ while(true)
         Console.WriteLine("Enter pressure: ");
         var pressureInput = Convert.ToDouble(Console.ReadLine());
         // Here we can create WeatherData object and set the measurements
-        WeatherData weatherData = new WeatherData();
+        
         weatherData.SetMeasurements((float)tempInput, (float)humidityInput, (float)pressureInput);
     }    
 }
