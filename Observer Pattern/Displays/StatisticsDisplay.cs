@@ -8,12 +8,15 @@ public class StatisticsDisplay : IObserver, IDisplay
         private float tempSum = 0.0F;
         private int numReadings = 0;
 
+        private ISubject weatherData;
         public StatisticsDisplay(ISubject weatherData)
         {
+            this.weatherData = weatherData;
             weatherData.RegisterObserver(this);
         }
-        public void Udpate(float temperature, float humidity, float pressure) 
+        public void Udpate() 
         {
+            float temperature = this.weatherData.GetTemperature();
             tempSum += temperature;
             numReadings++;
 

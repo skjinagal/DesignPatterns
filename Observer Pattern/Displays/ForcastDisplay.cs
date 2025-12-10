@@ -8,16 +8,18 @@ namespace Observer_Pattern.Displays
         public float Humidity;
 
         public float Pressure;
+        private ISubject weatherData;
 
         public ForcastDisplay(ISubject weatherData)
         {
+            this.weatherData = weatherData;
             weatherData.RegisterObserver(this);
         }
-        public void Udpate(float temperature, float humidity, float pressure)
+        public void Udpate()
         {
-            Temperature = temperature;
-            Humidity = humidity;
-            Pressure = pressure;
+            Temperature = this.weatherData.GetTemperature();
+            Humidity = this.weatherData.GetHumidity();
+            Pressure = this.weatherData.GetPressure();
             Display();
         }
         public void Display()
