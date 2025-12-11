@@ -2,11 +2,16 @@
 using Factory_Pattern;
 using Factory_Pattern.Interfaces;
 using Factory_Pattern.Pizzas;
+using Factory_Pattern.PizzaStores;
 
 Console.WriteLine("Hello, World!");
 
 Console.WriteLine("Welcome to the Pizza Store!");
-IPizzaFactory pizzaFactory = new PizzaFactory();
-PizzaStore pizzaStore = new PizzaStore(pizzaFactory);   
-IPizza pizza1 = pizzaStore.OrderPizza("Cheese");
-Console.WriteLine($"You ordered a {pizza1.GetDescription()} costing ${pizza1.GetCost()}");
+
+PizzaStore nyStore = new NewYorkPizzaStore();
+PizzaStore chicagoStore = new ChicagoPizzaStore();
+IPizza pizza = nyStore.OrderPizza("cheese");
+Console.WriteLine($"Ethan ordered a {pizza.GetDescription()} costing ${pizza.GetCost()}");
+pizza = chicagoStore.OrderPizza("pepperoni");
+Console.WriteLine($"Joel ordered a {pizza.GetDescription()} costing ${pizza.GetCost()}");
+
