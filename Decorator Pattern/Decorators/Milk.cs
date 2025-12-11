@@ -1,8 +1,9 @@
-namespace Decorator_Pattern.Docorators;
+namespace Decorator_Pattern.Decorators;
 public class Milk : CondimentDecorator
 {
-    public Milk(Beverage beverage) : base(beverage)
+    public Milk(Beverage beverage)
     {
+        this.beverage = beverage;
     }
 
     public override string GetDescription()

@@ -1,13 +1,14 @@
 namespace Decorator_Pattern.Decorators;
 public class Soy : CondimentDecorator
 {
-    public Soy(Beverage beverage) : base(beverage)
+    public Soy(Beverage beverage)
     {
+        this.beverage = beverage;
     }
 
     public override string GetDescription()
     {
-        return _beverage.GetDescription() + ", Soy";
+        return beverage.GetDescription() + ", Soy";
     }
 
     public override double Cost()

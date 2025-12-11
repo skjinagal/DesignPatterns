@@ -1,13 +1,14 @@
-namespace Decoraotor_Pattern.Decorators;
+namespace Decorator_Pattern.Decorators;
 public class Mocha : CondimentDecorator
 {
-    public Mocha(Beverage beverage) : base(beverage)
+    public Mocha(Beverage beverage)
     {
+        this.beverage = beverage;
     }
 
     public override string GetDescription()
     {
-        return _beverage.GetDescription() + ", Mocha";
+        return beverage.GetDescription() + ", Mocha";
     }
 
     public override double Cost()
