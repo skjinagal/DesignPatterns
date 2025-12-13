@@ -1,21 +1,23 @@
 using Factory_Pattern.Pizzas;
 using Factory_Pattern.Interfaces;
+using Factory_Pattern.IngredientFactory;
 namespace Factory_Pattern.PizzaStores;
 public class NewYorkPizzaStore : PizzaStore
 {
-    public override IPizza CreatePizza(string type)
+    public override Pizza CreatePizza(string type)
     {
+        var ingredientFactory = new NYIngredientFactory();
         if (type == "cheese")
         {
-            return new NewYorkStyleCheesePizza();
+            return new CheesePizza(ingredientFactory);
         }
         else if (type == "veggie")
         {
-            return new NewYorkStyleVegPizza();
+            return new VeggiePizza(ingredientFactory);
         }
         else if( type == "peperoni")
         {
-            return new NewYorkStylePepperoniPizza();
+            return new PepperoniPizza(ingredientFactory);
         }
         else
         {

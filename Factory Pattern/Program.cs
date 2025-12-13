@@ -10,7 +10,7 @@ Console.WriteLine("Welcome to the Pizza Store!");
 
 PizzaStore nyStore = new NewYorkPizzaStore();
 PizzaStore chicagoStore = new ChicagoPizzaStore();
-IPizza pizza = nyStore.OrderPizza("cheese");
+Pizza pizza = nyStore.OrderPizza("cheese");
 Console.WriteLine($"Ethan ordered a {pizza.GetDescription()} costing ${pizza.GetCost()}");
 pizza = chicagoStore.OrderPizza("pepperoni");
 Console.WriteLine($"Joel ordered a {pizza.GetDescription()} costing ${pizza.GetCost()}");

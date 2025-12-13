@@ -2,12 +2,13 @@ using Factory_Pattern.Interfaces;
 namespace Factory_Pattern.PizzaStores;
 public abstract class PizzaStore
 {
-    public IPizza OrderPizza(string type)
+    public Pizza OrderPizza(string type)
     {
-        IPizza pizza = CreatePizza(type);
+        Pizza pizza = CreatePizza(type);
         pizza.GetDescription();
         pizza.GetCost();
+        pizza.prepair();
         return pizza;
     }
-    public abstract IPizza CreatePizza(string type);
+    public abstract Pizza CreatePizza(string type);
 }
