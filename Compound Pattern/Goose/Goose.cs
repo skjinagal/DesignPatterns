@@ -1,4 +1,4 @@
-namespace Compound_Pattern.Goose;
+namespace Compound_Pattern.Gooses;
 public class Goose
 {
     public void Honk()

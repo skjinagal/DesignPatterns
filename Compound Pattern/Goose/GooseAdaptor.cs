@@ -1,5 +1,5 @@
 using Compound_Pattern.Interface;
-namespace Compound_Pattern.Goose;
+namespace Compound_Pattern.Gooses;
 public class GooseAdaptor : IQuackable
 {
     private readonly Goose _goose;
